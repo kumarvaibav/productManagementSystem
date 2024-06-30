@@ -6,7 +6,7 @@ export default function GetPage() {
   const [error, setError] = useState(null);
   useEffect(() => {
     axios
-      .get("http://localhost:8080/product-service/list")
+      .get("https://productmanagementsystem-server-production.up.railway.app/")
       .then((res) => {
         console.log(res.data);
         setProduct(res.data);
@@ -19,11 +19,18 @@ export default function GetPage() {
   }, []);
   return (
     <div className="container mt-3">
-      <h1 style={{textAlign:'center'}}>Product List</h1>
-      {error && <div className="mt-3 text-danger" style={{fontSize:'40px'}}>{error}</div>}
+      <h1 style={{ textAlign: "center" }}>Product List</h1>
+      {error && (
+        <div className="mt-3 text-danger" style={{ fontSize: "40px" }}>
+          {error}
+        </div>
+      )}
 
       {product.length > 0 ? (
-        <table className="table table-dark table-hover mt-4" style={{fontSize:'23px'}}>
+        <table
+          className="table table-dark table-hover mt-4"
+          style={{ fontSize: "23px" }}
+        >
           <thead>
             <tr>
               <th>Product Id</th>
@@ -44,7 +51,14 @@ export default function GetPage() {
           </tbody>
         </table>
       ) : (
-        !error && <p className="text-info" style={{fontSize:'40px',textAlign:'center'}}>Please enter at least the first record!</p>
+        !error && (
+          <p
+            className="text-info"
+            style={{ fontSize: "40px", textAlign: "center" }}
+          >
+            Please enter at least the first record!
+          </p>
+        )
       )}
     </div>
   );
