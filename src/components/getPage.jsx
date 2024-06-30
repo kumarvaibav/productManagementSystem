@@ -6,7 +6,7 @@ export default function GetPage() {
   const [error, setError] = useState(null);
   useEffect(() => {
     axios
-      .get("https://productmanagementsystem-server-production.up.railway.app/")
+      .get("http://localhost:8080/product-service/list")
       .then((res) => {
         console.log(res.data);
         setProduct(res.data);
