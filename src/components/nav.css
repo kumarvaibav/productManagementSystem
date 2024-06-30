@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    
+  }
+
+  .l1 {
+    margin:15px 0px 10px;
+    height: 20px;
+  }
+
+  .l1 a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1.5rem; /*Increased font size*/
+    font-family:cursive;
+  }
+
+  .l1 a:hover, .l1 a.active {
+    background-color: #575757;
+  }
+
+  .container{
+    font-family:cursive;
+  }
+  
